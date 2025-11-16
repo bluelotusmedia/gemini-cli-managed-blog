@@ -77,7 +77,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
       urlToImage: article.banner_image,
       publishedAt: article.time_published,
       source: {
-        name: article.source.name,
+        name: article.source || 'Unknown Source',
       },
     }));
 
@@ -85,8 +85,6 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
       props: {
         articles: formattedArticles,
       },
-      // Re-generate the page every 24 hours
-      revalidate: 60 * 60 * 24,
     };
   } catch (error) {
     console.error('Error fetching news:', error);
