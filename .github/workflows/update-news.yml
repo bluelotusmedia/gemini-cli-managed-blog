@@ -2,8 +2,8 @@ name: Update Financial News
 
 on:
   schedule:
-    # Runs every day at midnight UTC
-    - cron: '0 0 * * *'
+    # Runs every weekday at 8:30 AM ET (12:30 UTC)
+    - cron: '30 12 * * 1-5'
   workflow_dispatch:
 
 permissions:
